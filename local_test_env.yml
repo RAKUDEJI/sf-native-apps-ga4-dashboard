@@ -1,0 +1,21 @@
+name: streamlit-python-testing
+channels:
+  - snowflake
+dependencies:
+  - python=3.11.8
+  - snowflake-snowpark-python[pandas]=1.12.0
+  - snowflake-ml-python
+  - pip
+  - setuptools
+  - python-dateutil
+  - plotly
+  - streamlit-card
+  # - folium
+  - geopandas
+  - pip:
+      # - streamlit-folium
+      - pytest
+      - pytest-xdist
+      - streamlit==1.26.0
+      - snowflake-cli-labs==2.0.0
+      - altair

@@ -1,0 +1,52 @@
+# For more information on creating manifest, go to https://docs.snowflake.com/en/developer-guide/native-apps/creating-manifest
+manifest_version: 1
+
+version:
+  name: Dev
+  label: "Dev Version"
+  comment: "Default version used for development. Override for actual deployment."
+
+artifacts:
+  setup_script: setup_script.sql
+  readme: README.md
+  default_streamlit: core.ui
+  extension_code: true
+references:
+  - ga4_view:
+      label: "GA4 View"
+      description: "Select view with GA4 event data"
+      privileges:
+        - SELECT
+      object_type: VIEW
+      multi_valued: false
+      register_callback: core.register_reference
+  - forecast_user_view:
+      label: "forecast user View"
+      description: "Select view with forecast user data"
+      privileges:
+        - SELECT
+      object_type: VIEW
+      multi_valued: false
+      register_callback: core.register_reference
+  - forecast_event_view:
+      label: "forecast event View"
+      description: "Select view with forecast event data"
+      privileges:
+        - SELECT
+      object_type: VIEW
+      multi_valued: false
+      register_callback: core.register_reference
+  - forecast_new_user_view:
+      label: "forecast new user View"
+      description: "Select view with forecast new user data"
+      privileges:
+        - SELECT
+      object_type: VIEW
+      multi_valued: false
+      register_callback: core.register_reference
+configuration:
+  trace_level: always
+  log_level: DEBUG
+privileges:
+  - IMPORTED PRIVILEGES ON SNOWFLAKE DB:
+      description: "To access account_usage views"

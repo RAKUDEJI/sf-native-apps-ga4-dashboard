@@ -1,0 +1,10 @@
+snowflake.local.yml
+output/**
+.venv/**
+config.toml
+snowflake.local.yml
+output/
+**/__pycache__/
+**/.pytest_cache/
+.connection_param.json
+deploy.ipynb

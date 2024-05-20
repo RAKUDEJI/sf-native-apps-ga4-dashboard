@@ -1,0 +1,49 @@
+{
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-toolsai.jupyter",
+				"ms-azuretools.vscode-docker",
+				"ms-python.black-formatter",
+				"KevinRose.vsc-python-indent",
+				"ms-python.isort",
+				"oderwat.indent-rainbow",
+				"redhat.vscode-yaml",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"wholroyd.jinja",
+				"snowflake.snowflake-vsc"
+			],
+			"settings": {
+				"extensions.verifySignature": false,
+				"editor.formatOnSave": true,
+				"python.languageServer": "Pylance",
+				"[python]": {
+					"editor.defaultFormatter": "ms-python.black-formatter",
+					"editor.formatOnSave": true
+				},
+				"isort.args": [
+					"--profile",
+					"black"
+				],
+				"black-formatter.args": [
+					"--line-length=120"
+				],
+				"git.fetchOnPull": true,
+				"git.autofetch": true
+			}
+		}
+	},
+	"features": {
+
+
+
+	},
+	"containerEnv": {
+
+	},
+	"onCreateCommand": "/bin/bash .devcontainer/onCreateCommand.sh"
+}
