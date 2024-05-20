@@ -209,7 +209,7 @@ def display_and_get_max_values(actual_data_dict, forecast_data_dict, scale_ratio
 
     for key, forecast_data in forecast_data_dict.items():
         forecast_df = pd.DataFrame(forecast_data)
-        max_forecast_df = forecast_df["FORECAST"].max()
+        max_forecast_df = forecast_df["UPPER_BOUND"].max()
         max_values[key] = max(max_values[key], max_forecast_df)
 
     max_scaled_values = {key: value * scale_ratio for key, value in max_values.items()}
